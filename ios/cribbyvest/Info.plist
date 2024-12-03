@@ -26,14 +26,13 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -48,5 +47,15 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Georama-Bold.ttf</string>
+		<string>Georama-ExtraLight.ttf</string>
+		<string>Georama-Light.ttf</string>
+		<string>Georama-Medium.ttf</string>
+		<string>Georama-Regular.ttf</string>
+		<string>Georama-SemiBold.ttf</string>
+		<string>Georama-Thin.ttf</string>
+	</array>
 </dict>
 </plist>

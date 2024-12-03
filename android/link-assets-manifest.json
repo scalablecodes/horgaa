@@ -1,0 +1,33 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Georama-Bold.ttf",
+      "sha1": "a29af1d920d4e86fd873cc3c5a408d11758d359c"
+    },
+    {
+      "path": "src/assets/fonts/Georama-ExtraLight.ttf",
+      "sha1": "aab43cba5abb68f740758e1500368ec150fba673"
+    },
+    {
+      "path": "src/assets/fonts/Georama-Light.ttf",
+      "sha1": "1e0b57cd5b0dc49d75b95d6b6e3a6c86dfac0a03"
+    },
+    {
+      "path": "src/assets/fonts/Georama-Medium.ttf",
+      "sha1": "04506d25f57928b72f23e112fce4ec7cc84aa28c"
+    },
+    {
+      "path": "src/assets/fonts/Georama-Regular.ttf",
+      "sha1": "e50ece8e24f807a3a407c2c5db47bcea995a73ed"
+    },
+    {
+      "path": "src/assets/fonts/Georama-SemiBold.ttf",
+      "sha1": "88e40d88157aa85d715d2f927f159f261ce4f831"
+    },
+    {
+      "path": "src/assets/fonts/Georama-Thin.ttf",
+      "sha1": "a88a0aef3791178f3484375dbeaf691325183289"
+    }
+  ]
+}

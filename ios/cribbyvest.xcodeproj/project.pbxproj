@@ -12,8 +12,15 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3EF159EB75AF42B5A214AF07 /* Georama-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DF0CD41A3DA4253A0732C66 /* Georama-Light.ttf */; };
+		52B69493A62F4CCA861564A9 /* Georama-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03A78399EABF4FE4B0B58131 /* Georama-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-cribbyvest-cribbyvestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-cribbyvest-cribbyvestTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A5325E6FA62D48D998953130 /* Georama-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAAD4871DCDE4E158615CF7F /* Georama-SemiBold.ttf */; };
+		B21F036BCA0347FA9A73139B /* Georama-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 727E89DF836C44B595EE2681 /* Georama-Bold.ttf */; };
+		C13614C0B609492193BDEDEC /* Georama-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 232032E5A9274071A2542873 /* Georama-Thin.ttf */; };
+		CF784D1FFB1341E7A0F8A264 /* Georama-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7311651E022B43448F3B4D76 /* Georama-ExtraLight.ttf */; };
+		E3608F8226094D0387A0FFCF /* Georama-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 39F3960873A5445EB16AF94E /* Georama-Regular.ttf */; };
 		EB4B1876A11B1C60F0C725F0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +38,7 @@
 		00E356EE1AD99517003FC87E /* cribbyvestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cribbyvestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* cribbyvestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cribbyvestTests.m; sourceTree = "<group>"; };
+		03A78399EABF4FE4B0B58131 /* Georama-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Georama-Medium.ttf"; path = "../src/assets/fonts/Georama-Medium.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* cribbyvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cribbyvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cribbyvest/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = cribbyvest/AppDelegate.mm; sourceTree = "<group>"; };
@@ -39,12 +47,18 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cribbyvest/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = cribbyvest/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-cribbyvest-cribbyvestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cribbyvest-cribbyvestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		232032E5A9274071A2542873 /* Georama-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Georama-Thin.ttf"; path = "../src/assets/fonts/Georama-Thin.ttf"; sourceTree = "<group>"; };
+		39F3960873A5445EB16AF94E /* Georama-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Georama-Regular.ttf"; path = "../src/assets/fonts/Georama-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-cribbyvest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cribbyvest.debug.xcconfig"; path = "Target Support Files/Pods-cribbyvest/Pods-cribbyvest.debug.xcconfig"; sourceTree = "<group>"; };
+		3DF0CD41A3DA4253A0732C66 /* Georama-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Georama-Light.ttf"; path = "../src/assets/fonts/Georama-Light.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-cribbyvest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cribbyvest.release.xcconfig"; path = "Target Support Files/Pods-cribbyvest/Pods-cribbyvest.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-cribbyvest-cribbyvestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cribbyvest-cribbyvestTests.debug.xcconfig"; path = "Target Support Files/Pods-cribbyvest-cribbyvestTests/Pods-cribbyvest-cribbyvestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-cribbyvest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cribbyvest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		727E89DF836C44B595EE2681 /* Georama-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Georama-Bold.ttf"; path = "../src/assets/fonts/Georama-Bold.ttf"; sourceTree = "<group>"; };
+		7311651E022B43448F3B4D76 /* Georama-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Georama-ExtraLight.ttf"; path = "../src/assets/fonts/Georama-ExtraLight.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = cribbyvest/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-cribbyvest-cribbyvestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cribbyvest-cribbyvestTests.release.xcconfig"; path = "Target Support Files/Pods-cribbyvest-cribbyvestTests/Pods-cribbyvest-cribbyvestTests.release.xcconfig"; sourceTree = "<group>"; };
+		EAAD4871DCDE4E158615CF7F /* Georama-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Georama-SemiBold.ttf"; path = "../src/assets/fonts/Georama-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -125,6 +139,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F752E755B2B84324AE2A3D2A /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +164,21 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-cribbyvest-cribbyvestTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F752E755B2B84324AE2A3D2A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				727E89DF836C44B595EE2681 /* Georama-Bold.ttf */,
+				7311651E022B43448F3B4D76 /* Georama-ExtraLight.ttf */,
+				3DF0CD41A3DA4253A0732C66 /* Georama-Light.ttf */,
+				03A78399EABF4FE4B0B58131 /* Georama-Medium.ttf */,
+				39F3960873A5445EB16AF94E /* Georama-Regular.ttf */,
+				EAAD4871DCDE4E158615CF7F /* Georama-SemiBold.ttf */,
+				232032E5A9274071A2542873 /* Georama-Thin.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +277,13 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				EB4B1876A11B1C60F0C725F0 /* PrivacyInfo.xcprivacy in Resources */,
+				B21F036BCA0347FA9A73139B /* Georama-Bold.ttf in Resources */,
+				CF784D1FFB1341E7A0F8A264 /* Georama-ExtraLight.ttf in Resources */,
+				3EF159EB75AF42B5A214AF07 /* Georama-Light.ttf in Resources */,
+				52B69493A62F4CCA861564A9 /* Georama-Medium.ttf in Resources */,
+				E3608F8226094D0387A0FFCF /* Georama-Regular.ttf in Resources */,
+				A5325E6FA62D48D998953130 /* Georama-SemiBold.ttf in Resources */,
+				C13614C0B609492193BDEDEC /* Georama-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import RootNavigation from "./src/shared/navigations/rootNaviation";
 import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "@shopify/restyle";
 import theme from "./src/shared/theme";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 function App(): React.JSX.Element {
   // const isDarkMode = useColorScheme() === 'dark';
@@ -30,9 +31,11 @@ function App(): React.JSX.Element {
       // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
       // backgroundColor={backgroundStyle.backgroundColor}
       />
-      <NavigationContainer>
-        <RootNavigation />
-      </NavigationContainer>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <NavigationContainer>
+          <RootNavigation />
+        </NavigationContainer>
+      </GestureHandlerRootView>
       {/* </SafeAreaView> */}
     </ThemeProvider>
   );

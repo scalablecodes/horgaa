@@ -1,68 +1,54 @@
 import LottieView from "lottie-react-native";
-import { StyleSheet, View } from "react-native";
-// import * as Animatable from "react-native-animatable";
+import { Dimensions, Modal, StyleSheet, View } from "react-native";
 
-// import { Text } from "@/shared/components/Typography";
-import { palette } from "@/shared/theme/palette";
+import loading from "../../../assets/animations/loading.json";
 
-import jsonLoader from "./json/loader.json";
-import { height } from "@/shared/theme";
-import RfValue from "@/helpers/RfValue";
+import { TextProps } from "../Typography";
+import { RFValue } from "react-native-responsive-fontsize";
+import { SafeAreaViewProps } from "../SafeAreaView";
+
+type TemporaryLoaderProps = SafeAreaViewProps & {
+  text?: string;
+  textColor?: TextProps;
+  visible: boolean;
+};
+
+const { height } = Dimensions.get("screen");
 
 const styles = StyleSheet.create({
   container: {
-    height: height,
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    backgroundColor: "#FFF",
-    zIndex: 999_999_999_999_999,
-    left: 0,
-    right: 0,
-    justifyContent: "center",
     alignItems: "center",
-  },
-  loadingText: {
-    color: palette.primary,
-    fontSize: RfValue(14),
-  },
-  lottieView: {
-    width: RfValue(400),
-    height: RfValue(400),
+    backgroundColor: "#fff",
+    bottom: 0,
+    flex: 1,
+    height,
+    justifyContent: "center",
+    left: 0,
+    position: "absolute",
+    right: 0,
+    top: 0,
+    zIndex: 999_999_999_999_999,
   },
 });
 
-const Loading = ({
-  active,
-  // text = "Processing...",
-  showLoading = true,
-}: {
-  active: boolean;
-  text?: string;
-  showLoading?: boolean;
-}) => {
+export default function Loader(props: TemporaryLoaderProps) {
+  const { visible } = props;
+
   return (
-    active && (
-      <View style={styles.container}>
-        {showLoading && (
-          <LottieView
-            autoPlay
-            loop
-            resizeMode="cover"
-            source={jsonLoader}
-            style={styles.lottieView}
-          />
-        )}
-        {/* <Animatable.View
-          animation="flash"
-          iterationCount="infinite"
-          iterationDelay={2000}>
-          <Text>{text}</Text>
-
-        </Animatable.View> */}
-      </View>
-    )
+    <>
+      {visible && (
+        <Modal visible={visible}>
+          <View style={styles.container}>
+            <LottieView
+              autoPlay
+              loop
+              resizeMode="cover"
+              source={loading}
+              style={{ width: RFValue(300), height: RFValue(300) }}
+            />
+          </View>
+        </Modal>
+      )}
+    </>
   );
-};
-
-export default Loading;
+}

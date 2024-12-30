@@ -5,15 +5,16 @@ import { ClientsNavigationProps } from "../../navigations/types";
 import MainLayout from "@/shared/layout/MainLayout";
 import { SvgIcon } from "@/assets/SvgIcon";
 import { ScrollBox } from "@/shared/components/ScrollBox";
+import { Rating } from "@kolking/react-native-rating";
 import { Image } from "@/shared/components/Image";
 import { horizontalScale, verticalScale } from "@/shared/theme";
 import { FlatList } from "react-native";
-
+import { adsData, TopHorgaa } from "./Index";
 import { Pressable } from "@/shared/components/Pressable";
-import { adsData, TopHorgaa } from "../Home/Index";
 
-const MyJobScreen: FC<ClientsNavigationProps<"SeeAllResult">> = ({
+const SeeAllResult: FC<ClientsNavigationProps<"SeeAllResult">> = ({
   navigation,
+  nearYou = false,
 }: {
   navigation: any;
   nearYou?: boolean;
@@ -44,9 +45,24 @@ const MyJobScreen: FC<ClientsNavigationProps<"SeeAllResult">> = ({
   }, [currentIndex]);
 
   return (
-    <MainLayout hideBackButton HeaderTitle={"My jobs"}>
+    <MainLayout HeaderTitle={"All Results"}>
       <ScrollBox paddingHorizontal={"md"} backgroundColor={"white"}>
-        <Box>
+        <Box marginTop={"xs"}>
+          <Text variant={"semiBold22"}>Electricians</Text>
+        </Box>
+        <Box marginTop={"md"}>
+          {nearYou && (
+            <Box
+              key={"1"}
+              marginBottom={"sm"}
+              flexDirection={"row"}
+              alignItems={"center"}
+              columnGap={"smd"}>
+              <SvgIcon name="locations" size="sm" color={"textColor"} />
+              <Text color={"textColor"}>Electricians near you</Text>
+            </Box>
+          )}
+
           <Box>
             <FlatList
               data={TopHorgaa}
@@ -57,7 +73,7 @@ const MyJobScreen: FC<ClientsNavigationProps<"SeeAllResult">> = ({
                   key={item.id}
                   onPress={() => navigation.navigate("ProDetails")}>
                   <Box
-                    marginBottom={"md"}
+                    marginTop={"md"}
                     flexDirection={"row"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
@@ -69,37 +85,26 @@ const MyJobScreen: FC<ClientsNavigationProps<"SeeAllResult">> = ({
                       columnGap={"md"}>
                       <Box
                         marginBottom={"sm"}
-                        backgroundColor={"gray100"}
+                        backgroundColor={"Blue800"}
                         padding={"xs"}
                         borderRadius={"xl"}>
-                        <SvgIcon name="briefcase" size="md" color="gray400" />
+                        <Image
+                          source={item.uri}
+                          resizeMode="contain"
+                          width={horizontalScale(40)}
+                          height={verticalScale(40)}
+                        />
                       </Box>
                       <Box>
-                        <Text marginBottom={"sm"} variant={"semiBold16"}>
-                          Tosin Kehinde
+                        <Text variant={"semiBold16"}>Tosin Kehinde</Text>
+                        <Text marginBottom={"sm"} variant={"regular14"}>
+                          Electrician
                         </Text>
-                        <Box
-                          marginBottom={"sm"}
-                          flexDirection={"row"}
-                          alignItems={"center"}
-                          columnGap={"sm"}>
-                          <Image
-                            source={item.uri}
-                            resizeMode="contain"
-                            width={horizontalScale(25)}
-                            height={verticalScale(25)}
-                          />
-                          <Text variant={"regular14"}>Tayo Aina</Text>
-                        </Box>
-                        <Text>Monday, 5th January - 11:50pm</Text>
                       </Box>
                     </Box>
-                    <Box
-                      backgroundColor={"blue200"}
-                      paddingVertical={"sm"}
-                      paddingHorizontal={"md"}
-                      borderRadius={"lg"}>
-                      <Text variant={"regular12"}>{"Pending"}</Text>
+                    <Box>
+                      <Text>{" 6 miles away "}</Text>
+                      <Rating size={16} rating={Number(item.rating)} />
                     </Box>
                   </Box>
                 </Pressable>
@@ -122,4 +127,4 @@ const MyJobScreen: FC<ClientsNavigationProps<"SeeAllResult">> = ({
   );
 };
 
-export default MyJobScreen;
+export default SeeAllResult;

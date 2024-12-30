@@ -1,3 +1,4 @@
+import React from "react";
 import { VFC } from "react";
 import { SvgProps } from "react-native-svg";
 
@@ -13,14 +14,14 @@ export type SvgIconProps = Omit<SvgProps, "color"> & {
 };
 
 const SvgIcon: VFC<SvgIconProps> = props => {
-  const { name, size = "xs", color = "white", ...rest } = props;
+  const { name, size = "xs", color = "undefined", ...rest } = props;
 
   const theme = useTheme();
 
   const Icon = svgIconPack[name];
   const iconSize = theme.iconSizes[size];
 
-  return <Icon {...iconSize} fill={palette[color]} {...rest} />;
+  return <Icon {...iconSize} stroke={palette[color]} {...rest} />;
 };
 
 export { SvgIcon };

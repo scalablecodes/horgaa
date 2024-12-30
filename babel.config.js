@@ -24,6 +24,8 @@ module.exports = function (api) {
             "@/clients": "./src/app/clients",
             "@/artisans": "./src/app/artisans",
             "@/app": "./src/app",
+            "@/hooks": "./src/hooks",
+            "@/contexts": "./src/contexts",
           },
         },
       ],

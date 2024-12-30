@@ -1,17 +1,22 @@
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 import { ClientsRootStackParameterList } from "./types";
 import BottomTabs from "./BottomNavigations";
-import SearchScreen from "../screens/Home/SearchScreen";
-// import BottomTabs from "@/app/artisans/navigations/BottomNavigations.tsx";
+import DashboardStackNavigations from "./DashboardStackNavigations";
 
 const Stack = createNativeStackNavigator<ClientsRootStackParameterList>();
 
 export default function ClientStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
-      <Stack.Screen name="SearchScreen" component={SearchScreen} />
+      <Stack.Screen
+        name="DashboardStackNavigations"
+        component={DashboardStackNavigations}
+      />
     </Stack.Navigator>
   );
 }

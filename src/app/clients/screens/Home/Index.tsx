@@ -10,8 +10,9 @@ import { Rating } from "@kolking/react-native-rating";
 import React, { FC, useEffect, useRef, useState } from "react";
 import { FlatList, TouchableOpacity } from "react-native";
 import { ClientsNavigationProps } from "../../navigations/types";
+import MainLayout from "@/shared/layout/MainLayout";
 
-const adsData = [
+export const adsData = [
   { id: "1", uri: ad_1 },
   { id: "2", uri: ad_1 },
   { id: "3", uri: ad_1 },
@@ -24,7 +25,7 @@ type categoryTypes = {
   subCategory: String;
 };
 
-const categoryData: categoryTypes[] = [
+export const categoryData: categoryTypes[] = [
   {
     mainColor: "blue200",
     IconBgColor: "blue400",
@@ -50,7 +51,7 @@ const categoryData: categoryTypes[] = [
     subCategory: "",
   },
 ];
-const TopHorgaa = [
+export const TopHorgaa = [
   {
     id: "1",
     name: "Kelvin Abiodun",
@@ -106,158 +107,161 @@ const HomeScreen: FC<ClientsNavigationProps<"HomeScreen">> = ({
   }, [currentIndex]);
 
   return (
-    <ScrollBox padding={"md"} backgroundColor={"white"}>
-      <TouchableOpacity onPress={() => navigation.navigate("SearchScreen")}>
-        <Box
-          borderWidth={1}
-          borderColor={"gray400"}
-          borderRadius={"sm"}
-          height={verticalScale(40)}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-          paddingHorizontal={"sm"}
-          flexDirection={"row"}>
-          <Text color={"textColor"}>Search for people around you</Text>
+    <MainLayout hideBackButton HeaderTitle={"Welcome, John"}>
+      <ScrollBox paddingHorizontal={"md"} backgroundColor={"white"}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("DashboardStackNavigations")}>
+          <Box
+            borderWidth={1}
+            borderColor={"gray400"}
+            borderRadius={"sm"}
+            height={verticalScale(40)}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            paddingHorizontal={"sm"}
+            flexDirection={"row"}>
+            <Text color={"textColor"}>Search for people around you</Text>
 
-          <SvgIcon name="search" size="md" />
+            <SvgIcon name="search" size="md" />
+          </Box>
+        </TouchableOpacity>
+
+        <Box marginTop={"md"}>
+          <FlatList
+            data={adsData}
+            decelerationRate="fast"
+            keyExtractor={({ id }: any) => id}
+            horizontal
+            renderItem={({ item }) => (
+              <Image
+                source={item.uri}
+                borderRadius="md"
+                marginRight={"sm"}
+                height={verticalScale(152)}
+                width={horizontalScale(330)}
+              />
+            )}
+            showsHorizontalScrollIndicator={false}
+            ref={flatListRef}
+            pagingEnabled
+            onScrollToIndexFailed={() => {
+              setCurrentIndex(0);
+              flatListRef.current.scrollToIndex({
+                index: 0,
+                animated: true,
+              });
+            }}
+          />
         </Box>
-      </TouchableOpacity>
 
-      <Box marginTop={"md"}>
-        <FlatList
-          data={adsData}
-          decelerationRate="fast"
-          keyExtractor={({ id }: any) => id}
-          horizontal
-          renderItem={({ item }) => (
-            <Image
-              source={item.uri}
-              borderRadius="md"
-              marginRight={"sm"}
-              height={verticalScale(152)}
-              width={horizontalScale(330)}
-            />
-          )}
-          showsHorizontalScrollIndicator={false}
-          ref={flatListRef}
-          pagingEnabled
-          onScrollToIndexFailed={() => {
-            setCurrentIndex(0);
-            flatListRef.current.scrollToIndex({
-              index: 0,
-              animated: true,
-            });
-          }}
-        />
-      </Box>
-
-      <Box
-        marginTop={"lg"}
-        flexDirection={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}>
-        <Text variant="bold18">Categories</Text>
-        <TouchableOpacity onPress={() => {}}>
-          <Text color={"primary"}>See all</Text>
-        </TouchableOpacity>
-      </Box>
-      <Box>
-        <FlatList
-          data={categoryData}
-          decelerationRate="fast"
-          keyExtractor={({ id }: any) => id}
-          horizontal
-          renderItem={({ item }) => (
-            <Box
-              marginRight={"md"}
-              marginTop={"md"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              backgroundColor={item.mainColor}
-              borderRadius={"md"}
-              width={horizontalScale(90)}
-              height={verticalScale(90)}>
+        <Box
+          marginTop={"lg"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}>
+          <Text variant="bold18">Categories</Text>
+          <TouchableOpacity onPress={() => {}}>
+            <Text color={"primary"}>See all</Text>
+          </TouchableOpacity>
+        </Box>
+        <Box>
+          <FlatList
+            data={categoryData}
+            decelerationRate="fast"
+            keyExtractor={({ id }: any) => id}
+            horizontal
+            renderItem={({ item }) => (
               <Box
-                backgroundColor={item.IconBgColor}
-                padding={"sm"}
-                borderRadius={"xl"}>
-                <SvgIcon name="briefcase" size="md" color="transparent" />
+                marginRight={"md"}
+                marginTop={"md"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                backgroundColor={item.mainColor}
+                borderRadius={"md"}
+                width={horizontalScale(90)}
+                height={verticalScale(90)}>
+                <Box
+                  backgroundColor={item.IconBgColor}
+                  padding={"sm"}
+                  borderRadius={"xl"}>
+                  <SvgIcon name="briefcase" size="md" color="transparent" />
+                </Box>
+                <Text>{item.category}</Text>
               </Box>
-              <Text>{item.category}</Text>
-            </Box>
-          )}
-          showsHorizontalScrollIndicator={false}
-          ref={flatListRef}
-          pagingEnabled
-          onScrollToIndexFailed={() => {
-            setCurrentIndex(0);
-            flatListRef.current.scrollToIndex({
-              index: 0,
-              animated: true,
-            });
-          }}
-        />
-      </Box>
+            )}
+            showsHorizontalScrollIndicator={false}
+            ref={flatListRef}
+            pagingEnabled
+            onScrollToIndexFailed={() => {
+              setCurrentIndex(0);
+              flatListRef.current.scrollToIndex({
+                index: 0,
+                animated: true,
+              });
+            }}
+          />
+        </Box>
 
-      <Box
-        marginTop={"lg"}
-        flexDirection={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}>
-        <Text variant="bold18">Top Horgaa</Text>
-        <TouchableOpacity onPress={() => {}}>
-          <Text color={"primary"}>See all</Text>
-        </TouchableOpacity>
-      </Box>
+        <Box
+          marginTop={"lg"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}>
+          <Text variant="bold18">Top Horgaa</Text>
+          <TouchableOpacity onPress={() => {}}>
+            <Text color={"primary"}>See all</Text>
+          </TouchableOpacity>
+        </Box>
 
-      <Box>
-        <FlatList
-          data={TopHorgaa}
-          decelerationRate="fast"
-          keyExtractor={({ id }: any) => id}
-          horizontal
-          renderItem={({ item }) => (
-            <Box
-              marginRight={"md"}
-              marginTop={"md"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              backgroundColor={"blue200"}
-              borderRadius={"md"}
-              width={horizontalScale(140)}
-              height={verticalScale(160)}>
+        <Box>
+          <FlatList
+            data={TopHorgaa}
+            decelerationRate="fast"
+            keyExtractor={({ id }: any) => id}
+            horizontal
+            renderItem={({ item }) => (
               <Box
-                marginBottom={"sm"}
-                backgroundColor={"Blue800"}
-                padding={"xs"}
-                borderRadius={"xl"}>
-                <Image
-                  source={item.uri}
-                  resizeMode="contain"
-                  width={horizontalScale(60)}
-                  height={verticalScale(60)}
-                />
+                marginRight={"md"}
+                marginTop={"md"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                backgroundColor={"blue200"}
+                borderRadius={"md"}
+                width={horizontalScale(140)}
+                height={verticalScale(160)}>
+                <Box
+                  marginBottom={"sm"}
+                  backgroundColor={"Blue800"}
+                  padding={"xs"}
+                  borderRadius={"xl"}>
+                  <Image
+                    source={item.uri}
+                    resizeMode="contain"
+                    width={horizontalScale(60)}
+                    height={verticalScale(60)}
+                  />
+                </Box>
+                <Text variant={"semiBold16"}>Tosin Kehinde</Text>
+                <Text marginBottom={"sm"} variant={"regular14"}>
+                  Private Tutor
+                </Text>
+                <Rating size={16} rating={Number(item.rating)} />
               </Box>
-              <Text variant={"semiBold16"}>Tosin Kehinde</Text>
-              <Text marginBottom={"sm"} variant={"regular14"}>
-                Private Tutor
-              </Text>
-              <Rating size={16} rating={Number(item.rating)} />
-            </Box>
-          )}
-          showsHorizontalScrollIndicator={false}
-          ref={flatListRef}
-          pagingEnabled
-          onScrollToIndexFailed={() => {
-            setCurrentIndex(0);
-            flatListRef.current.scrollToIndex({
-              index: 0,
-              animated: true,
-            });
-          }}
-        />
-      </Box>
-    </ScrollBox>
+            )}
+            showsHorizontalScrollIndicator={false}
+            ref={flatListRef}
+            pagingEnabled
+            onScrollToIndexFailed={() => {
+              setCurrentIndex(0);
+              flatListRef.current.scrollToIndex({
+                index: 0,
+                animated: true,
+              });
+            }}
+          />
+        </Box>
+      </ScrollBox>
+    </MainLayout>
   );
 };
 export default HomeScreen;

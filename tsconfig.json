@@ -24,6 +24,8 @@
       "@/assets": ["src/assets/*"],
       "@/shared/components": ["src/shared/components/*"],
       "@/app": ["src/app/*"],
+      "@/contexts": ["src/contexts/*"],
+      "@/hooks": ["src/hooks/*"],
       "@/helpers": ["src/helpers/*"],
       "@/aritisans": ["src/app/aritisans/*"],
       "@/clients": ["src/app/clients/*"],

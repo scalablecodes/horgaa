@@ -17,7 +17,7 @@ export const verticalScale = (size: number) =>
 export const moderateScale = (size: number, factor = 0.5) =>
   size + (horizontalScale(size) - size) * factor;
 
-const fontFamily = {
+export const fontFamily = {
   regular: "Georama-Regular",
   semiBold: "Georama-SemiBold",
   bold: "Georama-Bold",

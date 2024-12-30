@@ -12,6 +12,7 @@ export const palette = {
   blue400: "#bae6fd",
   Blue800: "#38bdf8",
   gray200: "#d1d5db",
+  gray100: "#EDEDED",
   gray400: "#848484",
   red200: "#FFEAEA",
   red400: "#FFB2B2",
@@ -19,6 +20,7 @@ export const palette = {
   orange200: "#ffedd5",
   orange400: "#fdba74",
   orange800: "#fb923c",
+  undefined: "",
 };
 
 export type PaletteType = keyof typeof palette;
